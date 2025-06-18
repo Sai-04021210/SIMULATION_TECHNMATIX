@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Update Result</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 80px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .result-label {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-danger">
+                <strong>Error:</strong> {{ error }}
+            </div>
+        {% else %}
+            <h3 class="text-success text-center mb-4">Attribute Updated Successfully</h3>
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Object:</strong> {{ object_path }}</li>
+                <li class="list-group-item"><strong>Attribute:</strong> {{ attribute_name }}</li>
+                <li class="list-group-item"><strong>Previous Value:</strong> {{ current_val }}</li>
+                <li class="list-group-item"><strong>New Value:</strong> {{ new_val }}</li>
+                <li class="list-group-item"><strong>Confirmed in Model:</strong> {{ confirmed_val }}</li>
+            </ul>
+        {% endif %}
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Update Another</a>
+        </div>
+    </div>
+</body>
+</html>

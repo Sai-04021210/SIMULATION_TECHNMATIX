@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Plant Simulation Attribute Setter</title>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            margin-top: 100px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Plant Simulation Attribute Setter</h2>
+        <form method="post">
+            <div class="mb-3">
+                <label for="object_path" class="form-label">Object Path</label>
+                <input type="text" class="form-control" name="object_path" id="object_path"
+                       placeholder=".Models.Model.Station1" required>
+            </div>
+            <div class="mb-3">
+                <label for="attribute_name" class="form-label">Attribute Name</label>
+                <input type="text" class="form-control" name="attribute_name" id="attribute_name"
+                       placeholder="ProcTime" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_value" class="form-label">New Value</label>
+                <input type="text" class="form-control" name="new_value" id="new_value"
+                       placeholder="e.g., 75" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Update</button>
+        </form>
+    </div>
+</body>
+</html>
